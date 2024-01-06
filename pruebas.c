@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 void    prueba(void)
 {
     char    c;
 
-    c = 0;
-    printf("isascii retorna %d cuando es menor o igual que %c\n", isascii(c), c);
+    c = ' ';
+    printf("isprint retorna %d para %d\n", isprint(c), c);
 }
 
 int main(void)
