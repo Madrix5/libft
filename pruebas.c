@@ -6,8 +6,8 @@ void    prueba(void)
 {
     char    c;
 
-    c = ' ';
-    printf("isprint retorna %d para %d\n", isprint(c), c);
+    c = 31;
+    printf("isprint retorna %d para %c\n", isprint(c), c);
 }
 
 int main(void)
