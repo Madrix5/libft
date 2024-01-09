@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 11:24:45 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/09 16:33:07 by adrijime         ###   ########.fr       */
+/*   Created: 2024/01/09 18:38:53 by adrijime          #+#    #+#             */
+/*   Updated: 2024/01/09 18:41:01 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_memset(char *point, char c, int n)
+int	ft_strlcat(char *dest, const char *src, size_t destsize)
 {
-	int	count;
-
-	count = 0;
-	while (count <= n)
-	{
-		point[count] = c;
-		count++;
-	}
-	return (point);
+	return (0);
 }

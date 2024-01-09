@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 11:24:45 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/09 16:33:07 by adrijime         ###   ########.fr       */
+/*   Created: 2024/01/09 12:49:31 by adrijime          #+#    #+#             */
+/*   Updated: 2024/01/09 18:13:33 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_memset(char *point, char c, int n)
+char	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	count;
+	unsigned int	i;
+	char			*d;
+	char			*s;
 
-	count = 0;
-	while (count <= n)
+	i = 0;
+	d = (char *)dest;
+	s = (char *)src;
+	while (i < n)
 	{
-		point[count] = c;
-		count++;
+		d[i] = s[i];
+		i++;
 	}
-	return (point);
+	return (dest);
 }

@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 11:24:45 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/09 16:33:07 by adrijime         ###   ########.fr       */
+/*   Created: 2024/01/09 13:05:41 by adrijime          #+#    #+#             */
+/*   Updated: 2024/01/09 20:22:21 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_memset(char *point, char c, int n)
+char	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	count;
+	char			*d;
+	char			*s;
+	unsigned int	i;
+	int				dlen;
+	int				slen;
 
-	count = 0;
-	while (count <= n)
+	d = (char *)dest;
+	s = (char *)src;
+	dlen = ft_strlen(d);
+	slen = ft_strlen(s);
+	i = 0;
+	if (dlen >= slen)
 	{
-		point[count] = c;
-		count++;
+		while (i < n)
+		{
+			return (0);
+		}
 	}
-	return (point);
+	else
+	{
+		return (0);
+	}
+	return (dest);
 }
