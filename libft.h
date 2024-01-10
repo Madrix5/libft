@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:25:06 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/10 12:52:53 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:55:54 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
 char	*t_strchr(const char *s, int c);
 //TODOS LOS MEM...
-char	*ft_memset(char *point, char c, int n);
+void	*ft_memset(void *b, int c, size_t n);
 char	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_memmove(void *dest, const void *src, unsigned long n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
