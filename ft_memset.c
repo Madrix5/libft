@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:24:45 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/10 15:55:31 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:53:04 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	*ft_memset(void *b, int c, size_t n)
 		s[i] = c;
 		i++;
 	}
+	return (s);
 }

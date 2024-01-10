@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:05:41 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/10 15:49:58 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:08:24 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char			*d;
-	char			*s;
-	unsigned int	i;
-	int				dlen;
-	int				slen;
+	char		*d;
+	char		*s;
+	size_t		i;
+	int			dlen;
+	int			slen;
 
 	d = (char *)dest;
 	s = (char *)src;
@@ -39,12 +39,4 @@ char	*ft_memmove(void *dest, const void *src, size_t n)
 		i++;
 	}
 	return (dest);
-}
-
-int	main(void)
-{
-	char	dest[] = "Hol";
-	char	src[] = "Adios";
-
-	
 }

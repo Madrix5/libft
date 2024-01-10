@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:25:06 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/10 15:55:54 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:11:43 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ char	ft_tolower(int c);
 char	ft_toupper(int c);
 //TODOS LOS STR...
 int		ft_strlen(const char *str);
-int		ft_strlcpy(char *dest, const char *src, size_t destsize);
-int		ft_strlcat(char *dest, const char *src, size_t destsize);
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
+size_t	ft_strlcat(char *dest, const char *src, size_t destsize);
 char	*ft_strdup(const char *s1);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
-char	*t_strchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c);
 //TODOS LOS MEM...
 void	*ft_memset(void *b, int c, size_t n);
 char	*ft_memcpy(void *dest, const void *src, size_t n);

@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:45:20 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/10 12:51:09 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:29:59 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,19 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	return (0);
+	char	n;
+	int		i;
+
+	n = c;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	while (i >= 0)
+	{
+		if (s[i] == n)
+			return ((char *)&s[i]);
+		i--;
+	}
+	return (s[i]);
 }

@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/10 14:11:02 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/10 17:05:52 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,19 +20,7 @@ LIBC 	= ar -rcs
 
 #=================================== SRC ======================================#
 
-SRCF =	ft_bzero.c \
-		ft_isalnum.c \
-		ft_isalpha.c \
-		ft_isascii.c \
-		ft_isdigit.c \
-		ft_isprint.c \
-		ft_memcpy.c \
-		ft_memmove.c \
-		ft_memset.c \
-		ft_strlcat.c \
-		ft_strlen.c \
-		ft_tolower.c \
-		ft_toupper.c \
+SRCF =	$(wildcard *.c)
 
 #=============================== DIRECTORIES ==================================#
 
@@ -62,10 +50,10 @@ $(NAME): ${OBJ}
 
 clean:
 		$(RM) $(DIR_OBJ)
-		echo "Deleted directory objects"
+		@echo "Deleted directory objects"
 
 fclean: clean
-		$(RM) $(NAME)
+		$(RM) $(NAME) a.out libft.h.gch
 		@echo "All done"
 
 re: fclean all
