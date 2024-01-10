@@ -6,21 +6,22 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:24:45 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/09 16:33:07 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:55:31 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_memset(char *point, char c, int n)
+void	*ft_memset(void *b, int c, size_t n)
 {
-	int	count;
+	size_t	i;
+	char	*s;
 
-	count = 0;
-	while (count <= n)
+	s = (char *)b;
+	i = 0;
+	while (i <= n)
 	{
-		point[count] = c;
-		count++;
+		s[i] = c;
+		i++;
 	}
-	return (point);
 }
