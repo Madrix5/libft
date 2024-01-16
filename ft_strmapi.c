@@ -6,7 +6,13 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:31:23 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/16 19:31:24 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/16 21:06:58 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	return (0);
+}

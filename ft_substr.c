@@ -6,7 +6,13 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:31:06 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/16 19:31:09 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/16 21:02:13 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	return (0);
+}

@@ -6,7 +6,13 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:31:20 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/16 19:31:21 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/16 21:05:37 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_itoa(int n)
+{
+	return (0);
+}
