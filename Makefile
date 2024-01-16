@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/10 17:05:52 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/16 19:17:47 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,31 @@ LIBC 	= ar -rcs
 
 #=================================== SRC ======================================#
 
-SRCF =	$(wildcard *.c)
+SRCF =	main.c \
+		ft_isalpha.c \
+		ft_isdigit.c \
+		ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_strlen.c \
+		ft_memset.c \
+		ft_bzero.c \
+		ft_memcpy.c \
+		ft_memmove.c \
+		ft_strlcpy.c \
+		ft_strlcat.c \
+		ft_toupper.c \
+		ft_tolower.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_strncmp.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_strnstr.c \
+		ft_atoi.c \
+		ft_calloc.c \
+		ft_strdup.c \
+		
 
 #=============================== DIRECTORIES ==================================#
 
@@ -36,7 +60,7 @@ all: dir $(NAME)
 
 dir:
 		mkdir $(DIR_OBJ)
-		@echo "Directory created"
+		echo "Directory created"
 
 $(DIR_OBJ)/%.o: %.c
 		$(CC) -MMD $(FLAGS) -c $< -o $@
@@ -44,22 +68,34 @@ $(DIR_OBJ)/%.o: %.c
 $(NAME): ${OBJ}
 		$(LIBC) $(NAME) $(OBJ)
 		touch $(NAME)
-				@echo "All compiled"
+				echo "All compiled"
+
+#====================== Quitar cuando este acabado ============================#
+
+prueba: a.out
+		echo "EJECUTANDO..."
+		./a.out
+
+a.out: 
+		$(CC) $(FLAGS) $(SRCF)
+		@echo "Creando a.out..."
 
 #================================== CLEAN =====================================#
 
 clean:
 		$(RM) $(DIR_OBJ)
-		@echo "Deleted directory objects"
+		echo "Deleted directory objects"
 
 fclean: clean
 		$(RM) $(NAME) a.out libft.h.gch
-		@echo "All done"
+		echo "All done"
 
 re: fclean all
 
+rep: fclean prueba
+
 #================================== PHONY =====================================#
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re ejecutar
 
 .SILENT:
