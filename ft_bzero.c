@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:24:24 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/10 14:14:20 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:09:56 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 void	ft_bzero(void *str, size_t n)
 {
-	size_t	i;
-	char	*s;
-
-	s = (char *)str;
-	i = 0;
-	while (i < n)
-	{
-		s[i] = '0';
-		i++;
-	}
+	ft_memset(str, 0, n);
 }

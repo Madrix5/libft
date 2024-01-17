@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/16 19:17:47 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/17 19:58:03 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,9 @@ SRCF =	main.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
 		
 
 #=============================== DIRECTORIES ==================================#
@@ -96,6 +99,6 @@ rep: fclean prueba
 
 #================================== PHONY =====================================#
 
-.PHONY: all clean fclean re ejecutar
+.PHONY: all clean fclean re prueba
 
 .SILENT:

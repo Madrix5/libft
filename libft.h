@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:25:06 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/16 20:47:51 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/17 13:02:16 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+//LIBRERIAS DE TEST
+# include <strings.h>
 
 //TODOS LOS IS...
 int		ft_isalnum(int c);
