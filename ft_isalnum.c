@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:24:29 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/09 16:40:09 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/18 19:18:44 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_isalnum(int c)
 {
-	if (c >= 49 && c <= 57)
-		return (2);
-	else if (c >= 65 && c <= 90)
+	if (c >= '0' && c <= '9')
 		return (1);
-	else if (c >= 97 && c <= 122)
-		return (4);
+	else if (c >= 'a' && c <= 'z')
+		return (1);
+	else if (c >= 'A' && c <= 'Z')
+		return (1);
 	else
 		return (0);
 }

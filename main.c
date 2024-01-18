@@ -6,13 +6,17 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:54:52 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/17 20:25:51 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/18 19:48:31 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//ATOI
+void	p_memset(void)
+{
+	return ;
+}
+
 void	p_atoi(void)
 {
 	char	*c;
@@ -55,9 +59,11 @@ void	p_isalpha(void)
 	return ;
 }
 
+//================ PARTE ADICIONAL ===================//
+
 void	p_substr(void)
 {
-	char const *s = "HOLA ME LLAMO ADRIAN";
+	char const		*s = "HOLA ME LLAMO ADRIAN";
 	unsigned int	start;
 	size_t			len;
 
@@ -77,19 +83,61 @@ void	p_strjoin(void)
 	printf("---------------- STRJOIN ------------------\n");
 	printf("String1: %s - String2: %s\n", s1, s2);
 	printf("Resultado: %s\n", ft_strjoin(s1, s2));
-	printf("********************************************\n\n");	
+	printf("********************************************\n\n");
 }
 
 void	p_strtrim(void)
 {
-	char const	s1[] = "paHolpaipa";
+	char const	s1[] = "paHola paipa";
 	char const	set[] = "pa";
 
 	printf("---------------- STRTRIM ------------------\n");
 	printf("S1: %s - SET: %s\n", s1, set);
 	printf("Resultado: %s\n", ft_strtrim(s1, set));
-	printf("********************************************\n\n");	
+	printf("********************************************\n\n");
 }
+
+void	p_split(void)
+{
+	return ;
+}
+
+void	p_itoa(void)
+{
+	return ;
+}
+
+void	p_strmapi(void)
+{
+	return ;
+}
+
+void	p_striteri(void)
+{
+	return ;
+}
+
+void	p_putchar_fd(void)
+{
+	return ;
+}
+
+void	p_putstr_fd(void)
+{
+	return ;
+}
+
+void	p_putendl_fd(void)
+{
+	return ;
+}
+
+void	p_putnbr_fd(void)
+{
+	return ;
+}
+
+
 
 int	main(void)
 {
