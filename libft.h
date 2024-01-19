@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:25:06 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/17 13:02:16 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:34:12 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <limits.h>
 //LIBRERIAS DE TEST
 # include <strings.h>
+# include <string.h>
+# include <ctype.h>
 
 //TODOS LOS IS...
 int		ft_isalnum(int c);
@@ -30,9 +32,9 @@ int		ft_isprint(int c);
 char	ft_tolower(int c);
 char	ft_toupper(int c);
 //TODOS LOS STR...
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
-size_t	ft_strlcat(char *dest, const char *src, size_t destsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t destsize);
 char	*ft_strdup(const char *s1);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);

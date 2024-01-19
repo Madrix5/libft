@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:35:30 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/16 19:26:38 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:01:41 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
-
-// int	main(void)
-// {
-// 	const char	*c = "   -65";
-
-// 	printf("%d\n", ft_atoi(c));
-// }

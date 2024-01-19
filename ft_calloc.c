@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:35:28 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/17 19:06:37 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:52:09 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ void	*ft_calloc(size_t count, size_t size)
 
 	i = 0;
 	string = malloc(count * size);
-	if (count * size == 0)
-		return (0);
 	if (!string)
-		return (0);
+		return (NULL);
+	if (count * size == 0)
+		return (NULL);
+	if (!string)
+		return (NULL);
 	while (i < (count))
 	{
 		string[i] = 0;

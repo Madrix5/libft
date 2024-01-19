@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/18 18:49:45 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/19 13:47:01 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME	= libft.a
 CC		= gcc
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -MMD
 RM 		= rm -rf
 LIBC 	= ar -rcs
 
@@ -66,16 +66,15 @@ all: dir $(NAME)
 -include $(DEP)
 
 dir:
-		mkdir $(DIR_OBJ)
+		mkdir -p $(DIR_OBJ)
 		echo "Directory created"
 
 $(DIR_OBJ)/%.o: %.c
-		$(CC) -MMD $(FLAGS) -c $< -o $@
+		$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): ${OBJ}
-		$(LIBC) $(NAME) $(OBJ)
-		touch $(NAME)
-				echo "All compiled"
+		$(LIBC) $@ $^
+		echo "All compiled"
 
 #====================== Quitar cuando este acabado ============================#
 
@@ -85,7 +84,7 @@ prueba: a.out
 
 a.out: 
 		$(CC) $(FLAGS) $(SRCF)
-		@echo "Creando a.out..."
+		echo "Creando a.out..."
 
 #================================== CLEAN =====================================#
 
