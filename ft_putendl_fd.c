@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:31:30 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/16 20:19:33 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/21 21:20:24 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i++] != '\0')
+	if (!s)
+		return ;
+	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);
+		i++;
 	}
 	write(fd, "\n", 1);
 }

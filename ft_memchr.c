@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:45:14 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/15 14:38:56 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/21 17:29:20 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const char		*sc;
-	unsigned char	ic;
-	size_t			i;
+	unsigned char		*sc;
+	unsigned char		r;
+	size_t				i;
 
 	i = 0;
-	sc = s;
-	ic = c;
-	while (sc[i] != '\0' && i < n)
+	r = (unsigned char)c;
+	sc = (unsigned char *)s;
+	while (i < n)
 	{
-		if (sc[i] == ic)
+		if (sc[i] == r)
 			return ((void *)&sc[i]);
 		i++;
 	}

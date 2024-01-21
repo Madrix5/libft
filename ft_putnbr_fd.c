@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:31:28 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/16 20:53:22 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/21 21:16:16 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	int	m;
-	int	d;
 
 	if (n == INT_MIN)
 	{
@@ -29,14 +28,13 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n <= 9)
 	{
-		n += 0;
+		n += '0';
 		write(fd, &n, 1);
 	}
 	else
 	{
-		m = n % 10;
-		d = n / 10;
-		write(fd, &d, 1);
+		m = n % 10 + '0';
+		ft_putnbr_fd(n / 10, fd);
 		write(fd, &m, 1);
 	}
 }

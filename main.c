@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:54:52 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/19 10:16:14 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/21 21:23:14 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,14 @@ void	p_bzero(void)
 
 void	p_calloc(void)
 {
+	size_t	count;
+	size_t	size;
+
+	count = 5;
+	size = 3;
 	printf("----------------- CALLOC ------------------\n");
+	printf("Original: %s\n", calloc(count, size));
+	printf("Mio: %s\n", ft_calloc(count, size));
 	printf("*********************************************\n\n");
 }
 
@@ -85,7 +92,7 @@ void	p_isdigit(void)
 	int_least64_t	c;
 
 	c = 'a';
-	printf("----------------- ISASCII ------------------\n");
+	printf("----------------- ISDIGIT ------------------\n");
 	printf("Original: %d\n", isdigit(c));
 	printf("Mio: %d\n", ft_isdigit(c));
 	printf("*********************************************\n\n");
@@ -96,15 +103,52 @@ void	p_isprint(void)
 	int	c;
 
 	c = 'a';
-	printf("----------------- ISASCII ------------------\n");
+	printf("----------------- ISPRINT ------------------\n");
 	printf("Original: %d\n", isprint(c));
 	printf("Mio: %d\n", ft_isprint(c));
 	printf("*********************************************\n\n");
 }
 
+void	p_memchr(void)
+{
+	const char	*s = "HOLA";
+	char		c;
+	size_t		n;
+	
+	c = 'L';
+	n = 4;
+	printf("----------------- MEMCHR ------------------\n");
+	printf("Original: %s\n", memchr(s, c, n));
+	printf("Mio: %s\n", ft_memchr(s, c, n));
+	printf("*********************************************\n\n");
+}
+
+void	p_memcmp(void)
+{
+	char	*s1 = "Hola1";
+	char	*s2 = "Hola2";
+	size_t	n;
+	
+	n = 4;
+	printf("----------------- MEMCMP ------------------\n");
+	printf("Original: %d\n", memcmp(s1, s2, n));
+	printf("Mio: %d\n", ft_memcmp(s1, s2, n));
+	printf("*********************************************\n\n");
+}
+
+void	p_memcpy(void)
+{
+	return ;
+}
+
+void	p_memmove(void)
+{
+	return ;
+}
+
 void	p_memset(void)
 {
-	char	*b = "";
+	char	*b = strdup("");
 	int		c;
 	size_t	n;
 
@@ -116,6 +160,70 @@ void	p_memset(void)
 	printf("********************************************\n\n");
 }
 
+void	p_strchr(void)
+{
+	return ;
+}
+
+void	p_strdup(void)
+{
+	return ;
+}
+
+void	p_strlcat(void)
+{
+	return ;
+}
+
+void	p_strlcpy(void)
+{
+	return ;
+}
+
+void	p_strlen(void)
+{
+	return ;
+}
+
+void	p_strncmp(void)
+{
+	const char	*s1 = "Hola";
+	const char	*s2 = "Holo";
+	size_t		n;
+
+	n = 0;
+	printf("---------------- STRNCMP ------------------\n");
+	printf("Original: %d\n", strncmp(s1, s2, n));
+	printf("Mio: %d\n", ft_strncmp(s1, s2, n));
+	printf("********************************************\n\n");
+}
+
+void	p_strnstr(void)
+{
+	return ;
+}
+
+void	p_strrchr(void)
+{
+	const char	*s = "Hola";
+	int			r;
+
+	r = 'l';
+	printf("---------------- STRRCHR ------------------\n");
+	printf("Original: %s\n", strrchr(s, r));
+	printf("Mio: %s\n", ft_strrchr(s, r));
+	printf("********************************************\n\n");
+}
+
+void	p_tolower(void)
+{
+	return ;
+}
+
+void	p_toupper(void)
+{
+	return ;
+}
 //================ PARTE ADICIONAL ===================//
 
 void	p_substr(void)
@@ -124,7 +232,7 @@ void	p_substr(void)
 	unsigned int	start;
 	size_t			len;
 
-	start = 6;
+	start = 22;
 	len = 10;
 	printf("---------------- SUBSTR ------------------\n");
 	printf("La string es: %s\nStart es: %d\nLen es: %zu\n\n", s, start, len);
@@ -145,7 +253,7 @@ void	p_strjoin(void)
 
 void	p_strtrim(void)
 {
-	char const	s1[] = "paHola paipa";
+	char const	s1[] = "paHola Paipa";
 	char const	set[] = "pa";
 
 	printf("---------------- STRTRIM ------------------\n");
@@ -198,22 +306,91 @@ void	p_putendl_fd(void)
 void	p_putnbr_fd(void)
 {
 	printf("---------------- PUTNBR_FD ------------------\n");
-	printf("********************************************\n\n");}
+	printf("********************************************\n\n");
+}
 
+//================================== BONUS ===================================//
 
+void	p_lstnew(void)
+{
+	return ;
+}
+
+void	p_lstadd_front(void)
+{
+	return ;
+}
+
+void	p_lstsize(void)
+{
+	return ;
+}
+
+void	p_lstlast(void)
+{
+	return ;
+}
+
+void	p_lstadd_back(void)
+{
+	return ;
+}
+
+void	p_lstdelone(void)
+{
+	return ;
+}
+
+void	p_lstclear(void)
+{
+	return ;
+}
+
+void	p_lstiter(void)
+{
+	return ;
+}
+
+void	p_lstmap(void)
+{
+	return ;
+}
 
 int	main(void)
 {
 	p_atoi();
 	p_bzero();
+	p_calloc();
 	p_isalnum();
 	p_isalpha();
 	p_isascii();
 	p_isdigit();
 	p_isprint();
+	p_memchr();
+	p_memcmp();
+	// p_memcpy();
+	// p_memmove();
 	p_memset();
+	// p_strchr();
+	// p_strdup();
+	// p_strlcat();
+	// p_strlcpy();
+	// p_strlen();
+	p_strncmp();
+	// p_strnstr();
+	p_strrchr();
+	// p_tolower();
+	// p_toupper();
 	p_substr();
 	p_strjoin();
 	p_strtrim();
+	// p_split();
+	// p_itoa();
+	// p_strmapi();
+	// p_striteri();
+	// p_putchar_fd();
+	// p_putstr_fd();
+	// p_putend_fd();
+	// p_putnbr_fd();
 	return (0);
 }
