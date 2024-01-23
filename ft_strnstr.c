@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:35:32 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/15 15:53:19 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/22 21:18:38 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,20 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (needle[0] == '\0')
-		return ((char *)&haystack[0]);
-	while (haystack[i] && (i + j) < len)
+	j = 0;
+	if (!needle[i])
+		return ((char *)haystack);
+	while (haystack[i] && needle[j] && j < len)
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && needle[j] != '\0')
-			j++;
-		if (needle[j] == '\0')
-			return ((char *)&haystack[i]);
+		if (haystack[i] == needle[0])
+		{
+			while (haystack[i + j] == needle[j] && needle[j] && \
+					haystack[i + j] && i + j < len)
+				j++;
+			if (needle[j] == '\0')
+				return ((char *)&haystack[i]);
+		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

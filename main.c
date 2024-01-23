@@ -6,11 +6,13 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:54:52 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/21 21:23:14 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:17:45 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define KRED  "\e[1m\x1B[31mfail\033[0m"
+#define KGRN  "\e[1m\x1B[32mpass\033[0m"
 
 //===================== PARTE OBLIGATORIA ===========================//
 
@@ -18,7 +20,7 @@ void	p_atoi(void)
 {
 	char	*c;
 
-	c = "  -5742";
+	c = "  --5742";
 	printf("---------------- ATOI -------------------\n");
 	printf("EL NUMERO A CONVERTIR: %s\n", c);
 	printf("EL ORIGINAL: %d\n", atoi(c));
@@ -138,12 +140,28 @@ void	p_memcmp(void)
 
 void	p_memcpy(void)
 {
-	return ;
+	char	dest[] = "Hola";
+	char	src[] = "Adios";
+	size_t	n;
+
+	n = 4;
+	printf("----------------- MEMCPY ------------------\n");
+	printf("Original: %s\n", memcpy(dest, src, n));
+	printf("Mio: %s\n", ft_memcpy(dest, src, n));
+	printf("*********************************************\n\n");
 }
 
 void	p_memmove(void)
 {
-	return ;
+	char	dest[] = "Hola";
+	char	src[] = "Adio";
+	size_t	n;
+
+	n = ft_strlen(src);
+	printf("----------------- MEMMOVE ------------------\n");
+	printf("Original: %s\n", memmove(dest, src, n));
+	printf("Mio: %s\n", ft_memmove(dest, src, n));
+	printf("*********************************************\n\n");
 }
 
 void	p_memset(void)
@@ -162,36 +180,69 @@ void	p_memset(void)
 
 void	p_strchr(void)
 {
-	return ;
+	char	s[] = "Hola";
+	char	c;
+
+	c = 'l';
+	printf("----------------- STRCHR ------------------\n");
+	printf("Original: %s\n", strchr(s, c));
+	printf("Mio: %s\n", ft_strchr(s, c));
+	printf("*********************************************\n\n");
 }
 
 void	p_strdup(void)
 {
-	return ;
+	char	s1[] = "Hola";
+
+	printf("----------------- STRDUP ------------------\n");
+	printf("Original: %s\n", strdup(s1));
+	printf("Mio: %s\n", ft_strdup(s1));
+	printf("*********************************************\n\n");
 }
 
 void	p_strlcat(void)
 {
-	return ;
+	char	dst[] = "Hola";
+	char	src[] = "Adios";
+	size_t	dstsize;
+
+	dstsize = ft_strlen(dst);
+	printf("----------------- STRLCAT ------------------\n");
+	printf("Original: %lu\n", strlcat(dst, src, dstsize));
+	printf("Mio: %lu\n", ft_strlcat(dst, src, dstsize));
+	printf("*********************************************\n\n");
 }
 
 void	p_strlcpy(void)
 {
-	return ;
+	char	dst[] = "Hola";
+	char	src[] = "Adios";
+	size_t	dstsize;
+
+	dstsize = ft_strlen(dst);
+	printf("----------------- STRLCPY ------------------\n");
+	printf("Original: %lu\n", strlcpy(dst, src, dstsize));
+	printf("Mio: %lu\n", ft_strlcpy(dst, src, dstsize));
+	printf("*********************************************\n\n");
 }
 
 void	p_strlen(void)
 {
-	return ;
+	char	s[] = "Hola";
+
+	printf("----------------- STRLEN ------------------\n");
+	printf("Original: %lu\n", strlen(s));
+	printf("Mio: %lu\n", ft_strlen(s));
+	printf("*********************************************\n\n");
 }
 
 void	p_strncmp(void)
 {
 	const char	*s1 = "Hola";
-	const char	*s2 = "Holo";
+	const char	*s2 = "adios";
 	size_t		n;
 
-	n = 0;
+	n = 10;
 	printf("---------------- STRNCMP ------------------\n");
 	printf("Original: %d\n", strncmp(s1, s2, n));
 	printf("Mio: %d\n", ft_strncmp(s1, s2, n));
@@ -200,7 +251,15 @@ void	p_strncmp(void)
 
 void	p_strnstr(void)
 {
-	return ;
+	const char	haystack[] = "Hola";
+	const char	needle[] = "la";
+	size_t		len;
+	
+	len = strlen(haystack);
+	printf("----------------- STRNSTR ------------------\n");
+	printf("Original: %s\n", strnstr(haystack, needle, len));
+	printf("Mio: %s\n", ft_strnstr(haystack, needle, len));
+	printf("*********************************************\n\n");
 }
 
 void	p_strrchr(void)
@@ -217,12 +276,24 @@ void	p_strrchr(void)
 
 void	p_tolower(void)
 {
-	return ;
+	char	c;
+
+	c = 'L';
+	printf("---------------- TOLOWER ------------------\n");
+	printf("Original: %c\n", tolower(c));
+	printf("Mio: %c\n", ft_tolower(c));
+	printf("********************************************\n\n");
 }
 
 void	p_toupper(void)
 {
-	return ;
+	char	c;
+
+	c = 'l';
+	printf("---------------- TOUPPER ------------------\n");
+	printf("Original: %c\n", toupper(c));
+	printf("Mio: %c\n", ft_toupper(c));
+	printf("********************************************\n\n");
 }
 //================ PARTE ADICIONAL ===================//
 
@@ -264,48 +335,108 @@ void	p_strtrim(void)
 
 void	p_split(void)
 {
+	char	s[] = "Hola,Mari Carmen, Adios";
+	char	c;
+
+	c = ',';
 	printf("---------------- SPLIT ------------------\n");
+	ft_split(s, c);
 	printf("********************************************\n\n");
 }
 
 void	p_itoa(void)
 {
+	int	n;
+
+	n = -163;
 	printf("---------------- ITOA ------------------\n");
+	printf("%s\n", ft_itoa(n));
 	printf("********************************************\n\n");
+}
+
+//FUNCION PARA STRMAPI
+
+char	f(unsigned int n, char c)
+{
+	c = c + n;
+	return (c);
 }
 
 void	p_strmapi(void)
 {
+	char *s = "ejemplo";
+	
 	printf("---------------- STRMAPI ------------------\n");
+	printf("String principal: %s\n", s);
+	printf("String despues de pasarlo: %s\n", ft_strmapi(s, f));
 	printf("********************************************\n\n");
+}
+
+//FUNCION PARA STRITERI
+
+void	fa(unsigned int n, char *c)
+{
+	printf("Index: %d\n", n);
+	printf("Memory ID: %p\n", &c);
+	return ;
 }
 
 void	p_striteri(void)
 {
+	char *s = "ejemplo";
+	
 	printf("---------------- STRITERI ------------------\n");
+	printf("String principal: %s\n", s);
+	ft_striteri(s, fa);
 	printf("********************************************\n\n");
 }
 
 void	p_putchar_fd(void)
 {
+	char	c;
+	int		fd;
+
+	c = 'l';
+	fd = 1;
 	printf("---------------- PUTCHAR_FD ------------------\n");
+	ft_putchar_fd(c, fd);
+	printf("\n");
 	printf("********************************************\n\n");
 }
 
 void	p_putstr_fd(void)
 {
+	char	s[] = "Hola";
+	int		fd;
+
+	fd = 1;
 	printf("---------------- PUTSTR_FD ------------------\n");
+	ft_putstr_fd(s, fd);
+	printf("\n");
 	printf("********************************************\n\n");
 }
 
 void	p_putendl_fd(void)
 {
+	char	s[] = "Hola";
+	int		fd;
+	
+	fd = 1;
 	printf("---------------- PUTENDL_FD ------------------\n");
+	ft_putendl_fd(s, fd);
+	printf("\n");
 	printf("********************************************\n\n");}
 
 void	p_putnbr_fd(void)
 {
+	int	n;
+	int	fd;
+
+	n = -143;
+	fd = 1;
 	printf("---------------- PUTNBR_FD ------------------\n");
+	ft_putnbr_fd(n, fd);
+	printf("\n");
 	printf("********************************************\n\n");
 }
 
@@ -368,29 +499,29 @@ int	main(void)
 	p_isprint();
 	p_memchr();
 	p_memcmp();
-	// p_memcpy();
-	// p_memmove();
+	p_memcpy();
+	p_memmove();
 	p_memset();
-	// p_strchr();
-	// p_strdup();
-	// p_strlcat();
-	// p_strlcpy();
-	// p_strlen();
+	p_strchr();
+	p_strdup();
+	p_strlcat();
+	p_strlcpy();
+	p_strlen();
 	p_strncmp();
-	// p_strnstr();
+	p_strnstr();
 	p_strrchr();
-	// p_tolower();
-	// p_toupper();
+	p_tolower();
+	p_toupper();
 	p_substr();
 	p_strjoin();
 	p_strtrim();
-	// p_split();
-	// p_itoa();
-	// p_strmapi();
-	// p_striteri();
-	// p_putchar_fd();
-	// p_putstr_fd();
-	// p_putend_fd();
-	// p_putnbr_fd();
+	p_split();
+	p_itoa();
+	p_strmapi();
+	p_striteri();
+	p_putchar_fd();
+	p_putstr_fd();
+	p_putendl_fd();
+	p_putnbr_fd();
 	return (0);
 }
