@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:54:52 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/23 11:17:45 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/24 20:32:50 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	p_atoi(void)
 {
 	char	*c;
 
-	c = "  --5742";
+	c = "  892";
 	printf("---------------- ATOI -------------------\n");
 	printf("EL NUMERO A CONVERTIR: %s\n", c);
 	printf("EL ORIGINAL: %d\n", atoi(c));
@@ -335,12 +335,22 @@ void	p_strtrim(void)
 
 void	p_split(void)
 {
-	char	s[] = "Hola,Mari Carmen, Adios";
+	// char	**str;
+	char	*s = "\0aa\0bbb";
 	char	c;
-
-	c = ',';
+	int		i;
+	
+	c = '\0';
+	i = 0;
+	// printf("\e[1m\x1B[32mpass\033[0m");
 	printf("---------------- SPLIT ------------------\n");
-	ft_split(s, c);
+	printf("String --> %s\nCaracter --> %c\n", s, c);
+	// str = ft_split(s, c);
+	// while (str)
+	// {
+	// 	printf("%s\n", str[i]);
+	// 	i++;
+	// }
 	printf("********************************************\n\n");
 }
 
@@ -489,39 +499,39 @@ void	p_lstmap(void)
 
 int	main(void)
 {
-	p_atoi();
-	p_bzero();
-	p_calloc();
-	p_isalnum();
-	p_isalpha();
-	p_isascii();
-	p_isdigit();
-	p_isprint();
-	p_memchr();
-	p_memcmp();
-	p_memcpy();
-	p_memmove();
-	p_memset();
-	p_strchr();
-	p_strdup();
-	p_strlcat();
-	p_strlcpy();
-	p_strlen();
-	p_strncmp();
-	p_strnstr();
-	p_strrchr();
-	p_tolower();
-	p_toupper();
-	p_substr();
-	p_strjoin();
-	p_strtrim();
+	// p_atoi();
+	// p_bzero();
+	// p_calloc();
+	// p_isalnum();
+	// p_isalpha();
+	// p_isascii();
+	// p_isdigit();
+	// p_isprint();
+	// p_memchr();
+	// p_memcmp();
+	// p_memcpy();
+	// p_memmove();
+	// p_memset();
+	// p_strchr();
+	// p_strdup();
+	// p_strlcat();
+	// p_strlcpy();
+	// p_strlen();
+	// p_strncmp();
+	// p_strnstr();
+	// p_strrchr();
+	// p_tolower();
+	// p_toupper();
+	// p_substr();
+	// p_strjoin();
+	// p_strtrim();
 	p_split();
-	p_itoa();
-	p_strmapi();
-	p_striteri();
-	p_putchar_fd();
-	p_putstr_fd();
-	p_putendl_fd();
-	p_putnbr_fd();
+	// p_itoa();
+	// p_strmapi();
+	// p_striteri();
+	// p_putchar_fd();
+	// p_putstr_fd();
+	// p_putendl_fd();
+	// p_putnbr_fd();
 	return (0);
 }

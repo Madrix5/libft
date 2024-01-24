@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/23 11:19:21 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/24 20:23:26 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ DARK_YELLOW     =   \033[38;5;143m
 
 NAME	= libft.a
 CC		= gcc
-FLAGS	= -Wall -Wextra -Werror -MMD
+FLAGS	= -Wall -Wextra -Werror -MMD -g
 RM 		= rm -rf
 LIBC 	= ar -rcs
 
@@ -123,7 +123,7 @@ normi:
 
 clean:
 		$(RM) $(DIR_OBJ)
-		echo "$(ORANGE)Deleted directory objects$(DEF_COLOR)"
+		echo "$(ORANGE) Deleted directory objects$(DEF_COLOR)"
 
 fclean: clean
 		$(RM) $(NAME) *.d a.out libft.h.gch
