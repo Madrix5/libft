@@ -6,13 +6,13 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:25:02 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/09 18:35:19 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:26:53 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c = c - 32;
