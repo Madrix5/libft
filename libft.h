@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:25:06 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/22 17:54:19 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:26:20 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 //TODOS LOS TO...
-char	ft_tolower(int c);
-char	ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 //TODOS LOS STR...
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
