@@ -20,15 +20,18 @@ char	*ft_strdup(const char *s1)
 	char	*nstr;
 
 	i = 0;
-	s1len = ft_strlen((char *)s1);
+	s1len = ft_strlen(s1);
 	nstr = malloc((sizeof (char) * (s1len + 1)));
 	if (!nstr)
 		return (0);
-	while (i <= s1len)
+	while (i < s1len + 1)
 	{
 		nstr[i] = s1[i];
 		i++;
 	}
 	nstr[i] = '\0';
-	return ((char *)&nstr[0]);
+	return (str);
 }
+
+//Mirar si al final se pone el nulo.
+//Mirar de substituir el while por ft_memcpy(ptr, s1, ft_strlen(s1) + 1);
