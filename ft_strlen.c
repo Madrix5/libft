@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:24:53 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/19 13:52:19 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/26 20:23:55 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlen(const char *str)
 {
 	size_t		len;
-	
+
 	len = 0;
 	while (str[len] != '\0')
 		len++;

@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/26 19:14:55 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/26 20:39:31 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,8 @@ SRCF =	ft_isalpha.c 	\
 		ft_itoa.c		\
 		ft_split.c		\
 
+BONUS_F = 
+
 #=============================== DIRECTORIES ==================================#
 
 DIR_OBJ = objects
@@ -84,11 +86,18 @@ DIR_OBJ = objects
 OBJ = $(addprefix $(DIR_OBJ)/, $(SRCF:.c=.o))
 DEP = $(addprefix $(DIR_OBJ)/, $(SRCF:.c=.d))
 
+B_OBJ = $(addprefix $(DIR_OBJ)/, $(BONUF_F:.c=.o))
+B_DEP = $(addprefix $(DIR_OBJ)/, $(BONUF_F:.c=.d))
+
 #================================== RULES =====================================#
 
 all: dir $(NAME)
 -include $(DEP)
+-include $(B_DEP)
 
+bonus:	dir ${B_OBJ} $(NAME)
+		$(LIBC) $(NAME) $(OBJ) $(B_OBJ)
+		echo "$(DARK_GRAY)Compiling libft with bonus$(DEF_COLOR)"
 dir:
 		mkdir -p $(DIR_OBJ)
 		echo "$(YELLOW)Directory created for objects and dependencies$(DEF_COLOR)"
@@ -115,6 +124,6 @@ re: fclean all
 
 #================================== PHONY =====================================#
 
-.PHONY: all clean fclean re prueba
+.PHONY: all clean fclean re prueba bonus
 
 .SILENT:

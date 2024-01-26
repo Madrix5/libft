@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:31:18 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/26 18:56:21 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/26 20:24:55 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static char	**free_me(char **str)
 {
 	int	i;
-	
+
 	if (str)
 	{
 		i = 0;
@@ -46,7 +46,7 @@ static int	ft_count_w(const char *s, char c)
 		if (s[i] != c && s[i - 1] == c)
 			word++;
 		i++;
-	}	
+	}
 	return (word);
 }
 
@@ -59,7 +59,7 @@ static char	**fill_malloc(const char *s, char **str, char c)
 	i = 0;
 	start = -1;
 	j = 0;
-	while(j < ft_count_w(s, c))
+	while (j < ft_count_w(s, c))
 	{
 		if (s[i] != c && start == -1)
 			start = i;
@@ -82,12 +82,12 @@ static char	**fill_malloc(const char *s, char **str, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	
+
 	str = malloc(sizeof(char *) * (ft_count_w(s, c) + 1));
 	if (!str)
 		return (NULL);
 	str = fill_malloc(s, str, c);
 	if (!str)
-		return(NULL);
+		return (NULL);
 	return (str);
 }

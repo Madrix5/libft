@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:31:20 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/23 10:40:31 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/26 20:22:43 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*ft_putnbr(long n, char *str, int count)
 {
 	int	m;
 	int	sign;
-	
+
 	sign = 0;
 	str[count] = '\0';
 	count--;

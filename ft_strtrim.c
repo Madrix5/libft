@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:31:15 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/21 21:48:41 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/26 20:25:27 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*str;
 
 	i = 0;
-	// if (!s1 || !set)
-	// 	return (0);
 	len = ft_strlen(s1) - 1;
 	while (i <= len && ft_strchr(set, s1[i]))
 		i++;
