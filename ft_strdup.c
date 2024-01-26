@@ -6,11 +6,10 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:35:25 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/16 16:56:06 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/26 14:29:17 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)
@@ -29,9 +28,5 @@ char	*ft_strdup(const char *s1)
 		nstr[i] = s1[i];
 		i++;
 	}
-	nstr[i] = '\0';
-	return (str);
+	return (nstr);
 }
-
-//Mirar si al final se pone el nulo.
-//Mirar de substituir el while por ft_memcpy(ptr, s1, ft_strlen(s1) + 1);
