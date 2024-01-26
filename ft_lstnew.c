@@ -12,14 +12,25 @@
 
 #include "libft.h"
 
-/*
-Crea un nuevo nodo utilizando malloc(3). La
-variable miembro ’content’ se inicializa con el
-contenido del parámetro ’content’. La variable
-’next’, con NULL.
-*/
-
 t_list	*ft_lstnew(void *content)
 {
-	return ;
+	t_list	*add;
+	
+	add = (t_list *)malloc(sizeof(t_list));
+	if (!add)
+		return (NULL);
+	add->content = content;
+	add->next = NULL;
+	return (add);
 }
+
+/*
+int	main(void)
+{
+	t_list	newdata = ft_lstnew("Hola, soy Adrian");
+
+	printf("Contenido nuevo: %s\n", (char *)newdata->content);
+	free(newdata);
+	return (0);
+}
+*/
