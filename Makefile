@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/26 16:31:53 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/26 19:14:55 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ DARK_YELLOW     =   \033[38;5;143m
 
 NAME	= libft.a
 CC		= gcc
-FLAGS	= -Wall -Wextra -Werror -MMD -g -fsanitize=adress
+FLAGS	= -Wall -Wextra -Werror -MMD -g
 RM 		= rm -rf
 LIBC 	= ar -rcs
 
@@ -76,7 +76,6 @@ SRCF =	ft_isalpha.c 	\
 		ft_striteri.c 	\
 		ft_itoa.c		\
 		ft_split.c		\
-		main.c 			\
 
 #=============================== DIRECTORIES ==================================#
 
@@ -94,29 +93,13 @@ dir:
 		mkdir -p $(DIR_OBJ)
 		echo "$(YELLOW)Directory created for objects and dependencies$(DEF_COLOR)"
 
-$(DIR_OBJ)/%.o: %.c
+$(DIR_OBJ)/%.o: %.c Makefile libft.h
 		$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): ${OBJ}
 		$(LIBC) $@ $^
 		echo "$(GREEN)All compiled with flags, created libft.a$(DEF_COLOR)"
 
-#====================== Quitar cuando este acabado ============================#
-
-prueba: a.out
-		echo "$(GREEN)EJECUTANDO...$(DEF_COLOR)"
-		./a.out
-		$(RM) *.d
-		echo "$(GREEN)Ejecutado todo con exito y borrados todos los .d$(DEF_COLOR)"
-
-a.out: 
-		$(CC) $(FLAGS) $(SRCF)
-		echo "$(ITALIC)Creando a.out...$(DEF_COLOR)"
-
-rep: fclean prueba
-
-normi:
-		norminette $(STRF)
 
 #================================== CLEAN =====================================#
 

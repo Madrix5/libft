@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:54:52 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/26 16:11:41 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/26 19:39:24 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,8 +153,8 @@ void	p_memcpy(void)
 
 void	p_memmove(void)
 {
-	char	dest[] = "Hola";
-	char	src[] = "Adio";
+	char	dest[] = 0;
+	char	src[] = 0;
 	size_t	n;
 
 	n = ft_strlen(src);
@@ -336,7 +336,7 @@ void	p_strtrim(void)
 void	p_split(void)
 {
 	// char	**str;
-	char	*s = "           cdklshaf dklfjds, dkd   d ";
+	char	*s = "    Hola    Adios   ";
 	char	c;
 	int		i;
 	
@@ -345,7 +345,7 @@ void	p_split(void)
 	// printf("\e[1m\x1B[32mpass\033[0m");
 	printf("---------------- SPLIT ------------------\n");
 	printf("String --> %s\nCaracter --> %c\n", s, c);
-	// str = ft_split(s, c);
+	ft_split(s, c);
 	// while (str)
 	// {
 	// 	printf("%s\n", str[i]);
@@ -510,7 +510,7 @@ int	main(void)
 	// p_memchr();
 	// p_memcmp();
 	// p_memcpy();
-	// p_memmove();
+	p_memmove();
 	// p_memset();
 	// p_strchr();
 	// p_strdup();
@@ -525,7 +525,7 @@ int	main(void)
 	// p_substr();
 	// p_strjoin();
 	// p_strtrim();
-	p_split();
+	// p_split();
 	// p_itoa();
 	// p_strmapi();
 	// p_striteri();
