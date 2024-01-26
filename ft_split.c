@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:31:18 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/26 16:28:03 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/26 18:56:21 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	ft_count_w(const char *s, char c)
 
 	i = 0;
 	word = 0;
-	if (s[i] != c)
+	if (s[0] != c && s[0])
 	{
 		word++;
 		i++;
@@ -46,7 +46,7 @@ static int	ft_count_w(const char *s, char c)
 		if (s[i] != c && s[i - 1] == c)
 			word++;
 		i++;
-	}
+	}	
 	return (word);
 }
 
@@ -56,8 +56,6 @@ static char	**fill_malloc(const char *s, char **str, char c)
 	int		j;
 	int		start;
 
-//	if (!*s)
-//		return (NULL);
 	i = 0;
 	start = -1;
 	j = 0;
@@ -70,64 +68,26 @@ static char	**fill_malloc(const char *s, char **str, char c)
 		if (start != -1)
 		{
 			str[j] = ft_substr(s, start, i - start);
-			if (!str[j] && j > 0)
+			if (!str[j])
 				return (free_me(str));
 			j++;
 			start = -1;
 		}
 		i++;
 	}
-	//str[j][0] = '\0';
+	str[j] = NULL;
 	return (str);
-}
-
-void	prueba(char **str)
-{
-	int	c;
-
-	c = 0;
-	while (str[c])
-	{
-		printf("Valor en s[%d] -- %s\n", c, str[c]);
-		c++;
-	}
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	// if (!*s)
-	// 	return (NULL);
-	if (ft_count_w(s, c) == 0)
-	{
-		str = malloc(sizeof(char *));
-		if (!str)
-			return (NULL);
-		str[0] = ft_strdup("");
-		return (str);
-	}
-	str = malloc(sizeof(char *) * ft_count_w(s, c) + 1);
+	
+	str = malloc(sizeof(char *) * (ft_count_w(s, c) + 1));
 	if (!str)
 		return (NULL);
 	str = fill_malloc(s, str, c);
 	if (!str)
 		return(NULL);
-	prueba(str);
 	return (str);
-}
-
-int main(void)
-{
-	int		i = 0;
-//	int		j = 0;
-
-	char	**a;
-	a = ft_split("               ", ' ');
-	while (a[i])
-		printf("%s\n", a[i++]);
-	i = 0;
-	while (a[i])
-		free(a[i++]);
-	free(a);
-	return 0;
 }
