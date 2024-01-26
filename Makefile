@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/24 20:23:26 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/26 16:31:53 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,14 +36,13 @@ DARK_YELLOW     =   \033[38;5;143m
 
 NAME	= libft.a
 CC		= gcc
-FLAGS	= -Wall -Wextra -Werror -MMD -g
+FLAGS	= -Wall -Wextra -Werror -MMD -g -fsanitize=adress
 RM 		= rm -rf
 LIBC 	= ar -rcs
 
 #=================================== SRC ======================================#
 
-SRCF =	main.c 			\
-		ft_isalpha.c 	\
+SRCF =	ft_isalpha.c 	\
 		ft_isdigit.c 	\
 		ft_isalnum.c 	\
 		ft_isascii.c 	\
@@ -77,7 +76,7 @@ SRCF =	main.c 			\
 		ft_striteri.c 	\
 		ft_itoa.c		\
 		ft_split.c		\
-		
+		main.c 			\
 
 #=============================== DIRECTORIES ==================================#
 

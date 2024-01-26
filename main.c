@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:54:52 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/24 20:32:50 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/26 16:11:41 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -299,12 +299,12 @@ void	p_toupper(void)
 
 void	p_substr(void)
 {
-	char const		*s = "HOLA ME LLAMO ADRIAN";
+	char const		*s = "HOLA";
 	unsigned int	start;
 	size_t			len;
 
-	start = 22;
-	len = 10;
+	start = 0;
+	len = 3;
 	printf("---------------- SUBSTR ------------------\n");
 	printf("La string es: %s\nStart es: %d\nLen es: %zu\n\n", s, start, len);
 	printf("Resultado de mi funcion: %s\n", ft_substr(s, start, len));
@@ -336,11 +336,11 @@ void	p_strtrim(void)
 void	p_split(void)
 {
 	// char	**str;
-	char	*s = "\0aa\0bbb";
+	char	*s = "           cdklshaf dklfjds, dkd   d ";
 	char	c;
 	int		i;
 	
-	c = '\0';
+	c = ' ';
 	i = 0;
 	// printf("\e[1m\x1B[32mpass\033[0m");
 	printf("---------------- SPLIT ------------------\n");
