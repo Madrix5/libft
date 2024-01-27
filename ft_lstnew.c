@@ -23,14 +23,3 @@ t_list	*ft_lstnew(void *content)
 	add->next = NULL;
 	return (add);
 }
-
-/*
-int	main(void)
-{
-	t_list	newdata = ft_lstnew("Hola, soy Adrian");
-
-	printf("Contenido nuevo: %s\n", (char *)newdata->content);
-	free(newdata);
-	return (0);
-}
-*/
