@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/27 16:37:00 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/27 17:30:41 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ DARK_YELLOW     =   \033[38;5;143m
 #================================ VARIABLES ===================================#
 
 NAME	= libft.a
+B_NAME  = $(NAME)
 CC		= gcc
 FLAGS	= -Wall -Wextra -Werror -MMD -g
 RM 		= rm -rf
@@ -98,51 +99,58 @@ DEP = $(addprefix $(DIR_OBJ)/, $(SRCF:.c=.d))
 B_OBJ = $(addprefix $(DIR_OBJ)/, $(BONUF_F:.c=.o))
 B_DEP = $(addprefix $(DIR_OBJ)/, $(BONUF_F:.c=.d))
 
-#================================== RULES =====================================#
+#================================= RULES ======================================#
 
 all: dir $(NAME)
 -include $(DEP)
 -include $(B_DEP)
 
-bonus:	dir ${B_OBJ} $(NAME)
-		$(LIBC) $(NAME) $(OBJ) $(B_OBJ)
-		echo "$(DARK_GRAY)Compiling libft with bonus$(DEF_COLOR)"
 dir:
 		mkdir -p $(DIR_OBJ)
-		echo "$(YELLOW)Directory created for objects and dependencies$(DEF_COLOR)"
+		echo "$(YELLOW)💾== Directory created objects and dependencies ==💾$(DEF_COLOR)"
 
 $(DIR_OBJ)/%.o: %.c Makefile libft.h
 		$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): ${OBJ}
 		$(LIBC) $@ $^
-		echo "$(GREEN)All compiled with flags, created libft.a$(DEF_COLOR)"
+		echo "$(GREEN)✅== All compiled with flags, created libft.a ==🖥$(DEF_COLOR)"
 
 #=================================PRUEBA=======================================#
 
 ejecutar: a.out
 	./a.out
-	echo "$(RED)Bonus compilado$(DEF_COLOR)"
+	echo "$(RED)Bonus ejecutado$(DEF_COLOR)"
 
 a.out:
 	$(CC) $(FLAGS) $(BON_F) $(SRCF)
 	echo "$(BLUE)a.out created$(DEF_COLOR)"
 
-#================================== CLEAN =====================================#
+#================================= BONUS ======================================#
+
+bonus: dir $(B_NAME)
+		echo "🍾============== BONUS COMPILADO!!! ==============🥂"
+
+$(B_NAME): ${OBJ} ${B_OBJ}
+		$(LIBC) $@ $^
+		echo "✅$(GREEN)== libft compiled with flags created libft.a! ==✅$(DEF_COLOR)"
+
+
+#================================= CLEAN ======================================#
 
 clean:
 		$(RM) $(DIR_OBJ)
-		echo "$(ORANGE) Deleted directory objects$(DEF_COLOR)"
+		echo "🧨$(ORANGE)========== Deleted directory objects! ==========🧨$(DEF_COLOR)"
 
 fclean: clean
 		$(RM) $(NAME) *.d a.out libft.h.gch
-		echo "$(RED)All deleted: objects, dependencies and directory!!$(DEF_COLOR)"
+		echo "🧯$(RED)== objects dependencies and directory deleted ==🧯$(DEF_COLOR)"
 
 re: fclean all
 
 rep: ejecutar fclean
 #================================== PHONY =====================================#
 
-.PHONY: all clean fclean re prueba bonus
+.PHONY: all clean fclean re bonus rep ejecutar a.out
 
 .SILENT:
