@@ -454,7 +454,11 @@ void	p_putnbr_fd(void)
 
 void	p_lstnew(void)
 {
-	return ;
+	t_list	newdata = ft_lstnew("Hola, soy Adrian");
+
+	printf("Contenido nuevo: %s\n", (char *)newdata->content);
+	free(newdata);
+	return (0);
 }
 
 void	p_lstadd_front(void)
