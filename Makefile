@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/26 20:39:31 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/27 14:12:48 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,15 @@ SRCF =	ft_isalpha.c 	\
 		ft_itoa.c		\
 		ft_split.c		\
 
-BONUS_F = 
+BON_F = ft_lstadd_back.c	\
+		ft_lstadd_front.c	\
+		ft_lstclear.c 		\
+		ft_lstdelone.c 		\
+		ft_lstiter.c 		\
+		ft_lstlast.c 		\
+		ft_lstmap.c 		\
+		ft_lstnew.c 		\
+		ft_lstsize.c 		\
 
 #=============================== DIRECTORIES ==================================#
 
