@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/27 14:12:48 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/27 16:37:00 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,6 +86,7 @@ BON_F = ft_lstadd_back.c	\
 		ft_lstmap.c 		\
 		ft_lstnew.c 		\
 		ft_lstsize.c 		\
+		main.c 				\
 
 #=============================== DIRECTORIES ==================================#
 
@@ -117,6 +118,15 @@ $(NAME): ${OBJ}
 		$(LIBC) $@ $^
 		echo "$(GREEN)All compiled with flags, created libft.a$(DEF_COLOR)"
 
+#=================================PRUEBA=======================================#
+
+ejecutar: a.out
+	./a.out
+	echo "$(RED)Bonus compilado$(DEF_COLOR)"
+
+a.out:
+	$(CC) $(FLAGS) $(BON_F) $(SRCF)
+	echo "$(BLUE)a.out created$(DEF_COLOR)"
 
 #================================== CLEAN =====================================#
 
@@ -130,6 +140,7 @@ fclean: clean
 
 re: fclean all
 
+rep: ejecutar fclean
 #================================== PHONY =====================================#
 
 .PHONY: all clean fclean re prueba bonus
