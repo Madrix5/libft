@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/27 17:30:41 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/27 19:34:01 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,6 @@ DARK_YELLOW     =   \033[38;5;143m
 #================================ VARIABLES ===================================#
 
 NAME	= libft.a
-B_NAME  = $(NAME)
 CC		= gcc
 FLAGS	= -Wall -Wextra -Werror -MMD -g
 RM 		= rm -rf
@@ -96,8 +95,8 @@ DIR_OBJ = objects
 OBJ = $(addprefix $(DIR_OBJ)/, $(SRCF:.c=.o))
 DEP = $(addprefix $(DIR_OBJ)/, $(SRCF:.c=.d))
 
-B_OBJ = $(addprefix $(DIR_OBJ)/, $(BONUF_F:.c=.o))
-B_DEP = $(addprefix $(DIR_OBJ)/, $(BONUF_F:.c=.d))
+B_OBJ = $(addprefix $(DIR_OBJ)/, $(BON_F:.c=.o))
+B_DEP = $(addprefix $(DIR_OBJ)/, $(BON_F:.c=.d))
 
 #================================= RULES ======================================#
 
@@ -114,36 +113,27 @@ $(DIR_OBJ)/%.o: %.c Makefile libft.h
 
 $(NAME): ${OBJ}
 		$(LIBC) $@ $^
-		echo "$(GREEN)✅== All compiled with flags, created libft.a ==🖥$(DEF_COLOR)"
-
-#=================================PRUEBA=======================================#
-
-ejecutar: a.out
-	./a.out
-	echo "$(RED)Bonus ejecutado$(DEF_COLOR)"
-
-a.out:
-	$(CC) $(FLAGS) $(BON_F) $(SRCF)
-	echo "$(BLUE)a.out created$(DEF_COLOR)"
+		echo "$(GREEN)✅=== All compiled with flags, created libft.a ===🖥$(DEF_COLOR)"
 
 #================================= BONUS ======================================#
 
-bonus: dir $(B_NAME)
-		echo "🍾============== BONUS COMPILADO!!! ==============🥂"
-
-$(B_NAME): ${OBJ} ${B_OBJ}
-		$(LIBC) $@ $^
-		echo "✅$(GREEN)== libft compiled with flags created libft.a! ==✅$(DEF_COLOR)"
-
+bonus: dir $(NAME) $(B_OBJ)
+		if [ -f bonus ]; then\
+				echo "🌚 'bonus' is up to date. 🌝";\
+		else\
+				$(LIBC) $(NAME) $(OBJ) $(B_OBJ);\
+				ouch bonus;\
+				echo "🍾============== BONUS COMPILADO!!! ==============🥂"\
+		fi
 
 #================================= CLEAN ======================================#
 
 clean:
-		$(RM) $(DIR_OBJ)
+		$(RM) $(DIR_OBJ) bonus
 		echo "🧨$(ORANGE)========== Deleted directory objects! ==========🧨$(DEF_COLOR)"
 
 fclean: clean
-		$(RM) $(NAME) *.d a.out libft.h.gch
+		$(RM) $(NAME) *.d a.out libft.h.gch bonus
 		echo "🧯$(RED)== objects dependencies and directory deleted ==🧯$(DEF_COLOR)"
 
 re: fclean all

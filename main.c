@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:54:52 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/26 19:39:24 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:42:55 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,8 +153,8 @@ void	p_memcpy(void)
 
 void	p_memmove(void)
 {
-	char	dest[] = 0;
-	char	src[] = 0;
+	char	dest[] = "Hola";
+	char	src[] = "Adios";
 	size_t	n;
 
 	n = ft_strlen(src);
@@ -454,16 +454,23 @@ void	p_putnbr_fd(void)
 
 void	p_lstnew(void)
 {
-	t_list	newdata = ft_lstnew("Hola, soy Adrian");
+	t_list	*nnode = ft_lstnew("Hola");
 
-	printf("Contenido nuevo: %s\n", (char *)newdata->content);
-	free(newdata);
-	return (0);
+	printf("Contenido nuevo: %s\n", (char *)nnode->content);
+	free(nnode);
 }
 
 void	p_lstadd_front(void)
 {
-	return ;
+	t_list	*lst;
+	t_list	*new = NULL;
+
+	new->content = "Hola";
+	lst = malloc(sizeof(t_list));
+	if (!lst)
+		return ;
+	ft_lstadd_front(&lst, new);
+	printf("%s\n", (char *)lst->content);
 }
 
 void	p_lstsize(void)
@@ -514,7 +521,7 @@ int	main(void)
 	// p_memchr();
 	// p_memcmp();
 	// p_memcpy();
-	p_memmove();
+	// p_memmove();
 	// p_memset();
 	// p_strchr();
 	// p_strdup();
@@ -537,5 +544,14 @@ int	main(void)
 	// p_putstr_fd();
 	// p_putendl_fd();
 	// p_putnbr_fd();
+	p_lstnew();
+	p_lstadd_front();
+	// p_lstsize();
+	// p_lstlast();
+	// p_lstadd_back();
+	// p_lstdelone();
+	// p_lstclear();
+	// p_lstiter();
+	// p_lstmap();
 	return (0);
 }

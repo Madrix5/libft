@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 20:48:56 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/26 20:50:21 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:21:37 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	void	*temp;
-	t_list	*new;
+	void	*aux;
+	t_list	*newlist;
 	t_list	*elem;
 
 	if (!lst)
 		return (0);
-	new = NULL;
+	newlist = NULL;
 	while (lst)
 	{
-		temp = f(lst->content);
-		elem = ft_lstnew(temp);
+		aux = f(lst->content);
+		elem = ft_lstnew(aux);
 		if (!elem)
 		{
-			del(temp);
-			ft_lstclear(&new, del);
+			del(aux);
+			ft_lstclear(&newlist, del);
 		}
-		ft_lstadd_back(&new, elem);
+		ft_lstadd_back(&newlist, elem);
 		lst = lst->next;
 	}
-	return (new);
+	return (newlist);
 }
