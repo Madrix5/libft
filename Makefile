@@ -6,7 +6,7 @@
 #    By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:25:32 by adrijime          #+#    #+#              #
-#    Updated: 2024/01/27 19:34:01 by adrijime         ###   ########.fr        #
+#    Updated: 2024/01/29 17:56:57 by adrijime         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,48 +35,47 @@ DARK_YELLOW     =   \033[38;5;143m
 #================================ VARIABLES ===================================#
 
 NAME	= libft.a
-CC		= gcc
-FLAGS	= -Wall -Wextra -Werror -MMD -g
+CC		= cc
+FLAGS	= -Wall -Wextra -Werror -MMD
+DFLAGS	= -MMD
 RM 		= rm -rf
 LIBC 	= ar -rcs
 
 #=================================== SRC ======================================#
 
-SRCF =	ft_isalpha.c 	\
-		ft_isdigit.c 	\
-		ft_isalnum.c 	\
-		ft_isascii.c 	\
-		ft_isprint.c 	\
-		ft_strlen.c 	\
-		ft_memset.c 	\
-		ft_bzero.c 		\
-		ft_memcpy.c 	\
-		ft_memmove.c 	\
-		ft_strlcpy.c 	\
-		ft_strlcat.c 	\
-		ft_toupper.c 	\
-		ft_tolower.c 	\
-		ft_strchr.c 	\
-		ft_strrchr.c 	\
-		ft_strncmp.c 	\
-		ft_memchr.c 	\
-		ft_memcmp.c 	\
-		ft_strnstr.c 	\
-		ft_atoi.c 		\
-		ft_calloc.c 	\
-		ft_strdup.c 	\
-		ft_substr.c 	\
-		ft_strjoin.c 	\
-		ft_strtrim.c 	\
+SRCF =	ft_isalpha.c ft_isdigit.c ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_strlen.c \
+		ft_memset.c \
+		ft_bzero.c \
+		ft_memcpy.c \
+		ft_memmove.c \
+		ft_strlcpy.c \
+		ft_strlcat.c \
+		ft_toupper.c \
+		ft_tolower.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_strncmp.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_strnstr.c \
+		ft_atoi.c \
+		ft_calloc.c \
+		ft_strdup.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
 		ft_putchar_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c 	\
-		ft_putstr_fd.c 	\
-		ft_strmapi.c 	\
-		ft_striteri.c 	\
-		ft_itoa.c		\
-		ft_split.c		\
-
+		ft_putnbr_fd.c \
+		ft_putstr_fd.c \
+		ft_strmapi.c \
+		ft_striteri.c \
+		ft_itoa.c \
+		ft_split.c
+		
 BON_F = ft_lstadd_back.c	\
 		ft_lstadd_front.c	\
 		ft_lstclear.c 		\
@@ -85,8 +84,7 @@ BON_F = ft_lstadd_back.c	\
 		ft_lstlast.c 		\
 		ft_lstmap.c 		\
 		ft_lstnew.c 		\
-		ft_lstsize.c 		\
-		main.c 				\
+		ft_lstsize.c
 
 #=============================== DIRECTORIES ==================================#
 
@@ -100,47 +98,49 @@ B_DEP = $(addprefix $(DIR_OBJ)/, $(BON_F:.c=.d))
 
 #================================= RULES ======================================#
 
-all: dir $(NAME)
+all: $(NAME)
 -include $(DEP)
 -include $(B_DEP)
 
-dir:
+$(DIR_OBJ):
 		mkdir -p $(DIR_OBJ)
 		echo "$(YELLOW)💾== Directory created objects and dependencies ==💾$(DEF_COLOR)"
 
-$(DIR_OBJ)/%.o: %.c Makefile libft.h
+
+$(DIR_OBJ)/%.o: %.c Makefile libft.h | $(DIR_OBJ)
 		$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME): ${OBJ}
-		$(LIBC) $@ $^
+
+ifndef BONUS
+$(NAME): $(OBJ) Makefile libft.h 
+		$(LIBC) $@ $(OBJ)
 		echo "$(GREEN)✅=== All compiled with flags, created libft.a ===🖥$(DEF_COLOR)"
+else
+$(NAME): $(OBJ) ${B_OBJ} Makefile libft.h
+		$(LIBC) $@ $^
+		echo "$(GREEN)✅🍾============ BONUS COMPILADO!!! ============🥂🖥$(DEF_COLOR)"
+endif
 
 #================================= BONUS ======================================#
 
-bonus: dir $(NAME) $(B_OBJ)
-		if [ -f bonus ]; then\
-				echo "🌚 'bonus' is up to date. 🌝";\
-		else\
-				$(LIBC) $(NAME) $(OBJ) $(B_OBJ);\
-				ouch bonus;\
-				echo "🍾============== BONUS COMPILADO!!! ==============🥂"\
-		fi
+bonus:
+		mkdir -p $(DIR_OBJ)
+		make $(NAME) BONUS=1 --no-print-directory
 
 #================================= CLEAN ======================================#
 
 clean:
-		$(RM) $(DIR_OBJ) bonus
+		$(RM) $(DIR_OBJ)
 		echo "🧨$(ORANGE)========== Deleted directory objects! ==========🧨$(DEF_COLOR)"
 
 fclean: clean
-		$(RM) $(NAME) *.d a.out libft.h.gch bonus
+		$(RM) $(NAME)
 		echo "🧯$(RED)== objects dependencies and directory deleted ==🧯$(DEF_COLOR)"
 
 re: fclean all
 
-rep: ejecutar fclean
 #================================== PHONY =====================================#
 
-.PHONY: all clean fclean re bonus rep ejecutar a.out
+.PHONY: all clean fclean re bonus
 
 .SILENT:

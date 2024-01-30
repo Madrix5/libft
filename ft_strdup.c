@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:35:25 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/26 14:29:17 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/30 16:15:41 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,12 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 	return (nstr);
+}
+
+int	main(void)
+{
+	char	*s1;
+	
+	s1 = "Hola";
+	printf("%s\n", ft_strdup(s1));
 }

@@ -6,7 +6,7 @@
 /*   By: adrijime <adrijime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:54:52 by adrijime          #+#    #+#             */
-/*   Updated: 2024/01/27 18:42:55 by adrijime         ###   ########.fr       */
+/*   Updated: 2024/01/27 19:59:05 by adrijime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -452,60 +452,24 @@ void	p_putnbr_fd(void)
 
 //================================== BONUS ===================================//
 
-void	p_lstnew(void)
+void	p_lst(void)
 {
 	t_list	*nnode = ft_lstnew("Hola");
-
-	printf("Contenido nuevo: %s\n", (char *)nnode->content);
-	free(nnode);
-}
-
-void	p_lstadd_front(void)
-{
 	t_list	*lst;
 	t_list	*new = NULL;
+
+	printf("lstnew: %s\n", (char *)nnode->content);
+	free(nnode);
 
 	new->content = "Hola";
 	lst = malloc(sizeof(t_list));
 	if (!lst)
 		return ;
 	ft_lstadd_front(&lst, new);
-	printf("%s\n", (char *)lst->content);
-}
+	printf("lstadd_front: %s\n", (char *)lst->content);
 
-void	p_lstsize(void)
-{
-	return ;
-}
-
-void	p_lstlast(void)
-{
-	return ;
-}
-
-void	p_lstadd_back(void)
-{
-	return ;
-}
-
-void	p_lstdelone(void)
-{
-	return ;
-}
-
-void	p_lstclear(void)
-{
-	return ;
-}
-
-void	p_lstiter(void)
-{
-	return ;
-}
-
-void	p_lstmap(void)
-{
-	return ;
+	printf("lstsize: %d\n", lst);
+	
 }
 
 int	main(void)
@@ -544,14 +508,7 @@ int	main(void)
 	// p_putstr_fd();
 	// p_putendl_fd();
 	// p_putnbr_fd();
-	p_lstnew();
-	p_lstadd_front();
-	// p_lstsize();
-	// p_lstlast();
-	// p_lstadd_back();
-	// p_lstdelone();
-	// p_lstclear();
-	// p_lstiter();
-	// p_lstmap();
+	p_lst();
+	
 	return (0);
 }
