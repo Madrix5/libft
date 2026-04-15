@@ -1,3 +1,5 @@
+En construcción 🏗️
+
 PROYECTO LIBFT
 
 ·Debe estar escrito en C.
